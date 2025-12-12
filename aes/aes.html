@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AES-128</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+  body {
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg,#1e3c72,#2a5298);
+    color:#fff;
+    padding:20px;
+  }
+  .container {
+    background: rgba(0,0,0,0.75);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    width:100%;
+    max-width:500px;
+  }
+  h1 { text-align:center; margin-bottom:30px; font-size:2rem; text-shadow:2px 2px 10px rgba(0,0,0,0.5);}
+  .form { display:flex; flex-direction:column; gap:15px; }
+  label { font-size:0.9rem; margin-bottom:5px; }
+  input, textarea {
+    padding:12px 15px;
+    border-radius:12px;
+    border:none;
+    font-size:1rem;
+    background: rgba(255,255,255,0.1);
+    color:#fff;
+    resize:none;
+    outline:none;
+    transition: all 0.3s ease;
+  }
+  input:focus, textarea:focus {
+    background: rgba(255,255,255,0.2);
+    box-shadow:0 0 10px rgba(255,255,255,0.5);
+  }
+  .buttons { display:flex; justify-content:space-around; margin-top:10px; }
+  button {
+    padding:12px 25px;
+    border-radius:12px;
+    border:none;
+    font-size:1rem;
+    font-weight:bold;
+    cursor:pointer;
+    color:#fff;
+    background: linear-gradient(45deg,#ff6b6b,#f06595);
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+  }
+  button:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: linear-gradient(45deg,#f06595,#ff6b6b);
+    box-shadow:0 8px 20px rgba(0,0,0,0.5);
+  }
+  textarea#aes-output { background: rgba(255,255,255,0.2); color:#fff; }
+  .menu-btn {
+    display:inline-block;
+    margin-top:25px;
+    text-decoration:none;
+    color:#fff;
+    padding:12px 25px;
+    border-radius:12px;
+    background: linear-gradient(45deg,#12c2e9,#c471ed);
+    font-weight:bold;
+    transition: all 0.3s ease;
+    text-align:center;
+  }
+  .menu-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: linear-gradient(45deg,#c471ed,#12c2e9);
+    box-shadow:0 5px 15px rgba(0,0,0,0.4);
+  }
+  small { font-size:0.8rem; color:#ccc; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>AES-128 Encryption / Decryption</h1>
+  <div class="form">
+    <div>
+      <label for="aes-key">Key (16 characters) <small>Required for AES-128</small></label>
+      <input type="text" id="aes-key" placeholder="Enter 16-character key" maxlength="16">
+    </div>
+    <div>
+      <label for="aes-input">Input <small>Plaintext for Encryption / HEX Ciphertext for Decryption</small></label>
+      <textarea id="aes-input" placeholder="Enter plaintext or ciphertext" rows="4"></textarea>
+    </div>
+    <div class="buttons">
+      <button onclick="aesEncrypt()">Encrypt</button>
+      <button onclick="aesDecrypt()">Decrypt</button>
+    </div>
+    <div>
+      <label for="aes-output">Output <small>Result will appear here</small></label>
+      <textarea id="aes-output" placeholder="Output" rows="4" readonly></textarea>
+    </div>
+  </div>
+  <a href="../index.html" class="menu-btn">Back to Menu</a>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+<script src="aes.js"></script>
+</body>
+</html>

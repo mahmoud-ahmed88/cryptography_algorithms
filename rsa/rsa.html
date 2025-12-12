@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSA Encryption / Decryption</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .container {
+      background: rgba(0,0,0,0.7);
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border-radius: 12px;
+      border: none;
+      font-size: 1rem;
+      outline: none;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      transition: all 0.3s ease;
+      resize: none;
+    }
+
+    input:focus, textarea:focus {
+      background: rgba(255,255,255,0.2);
+      box-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    button {
+      padding: 12px 25px;
+      border-radius: 12px;
+      border: none;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.05);
+      background: linear-gradient(45deg, #fad0c4, #ff9a9e);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    textarea#rsa-output {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .menu-btn {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 12px;
+      background: linear-gradient(45deg, #12c2e9, #c471ed);
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .menu-btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      background: linear-gradient(45deg, #c471ed, #12c2e9);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>RSA Encryption / Decryption</h1>
+    <div class="form">
+      <input type="number" id="rsa-p" placeholder="Enter prime number p">
+      <input type="number" id="rsa-q" placeholder="Enter prime number q">
+      <input type="number" id="rsa-e" placeholder="Enter public exponent e">
+      <textarea id="rsa-input" placeholder="Enter plaintext or ciphertext" rows="4"></textarea>
+      <div class="buttons">
+        <button onclick="rsaEncrypt()">Encrypt</button>
+        <button onclick="rsaDecrypt()">Decrypt</button>
+      </div>
+      <textarea id="rsa-output" placeholder="Output" rows="4" readonly></textarea>
+    </div>
+    <a href="../index.html" class="menu-btn">Back to Menu</a>
+  </div>
+  <script src="rsa.js"></script>
+</body>
+</html>

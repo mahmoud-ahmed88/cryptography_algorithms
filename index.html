@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptography Algorithms</title>
+    <style>
+        /* Reset some defaults */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 50px 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .menu-btn {
+            text-decoration: none;
+            background: linear-gradient(45deg, #ff6b6b, #f06595);
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .menu-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            background: linear-gradient(45deg, #f06595, #ff6b6b);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cryptography Algorithms</h1>
+        <div class="menu">
+            <a href="aes/aes.html" class="menu-btn">AES-128</a>
+            <a href="rsa/rsa.html" class="menu-btn">RSA</a>
+            <a href="playfair_cipher/playfair.html" class="menu-btn">Playfair Cipher</a>
+            <a href="hill_cipher/hill.html" class="menu-btn">Hill Cipher</a>
+            <a href="des/des.html" class="menu-btn">DES</a>
+        </div>
+    </div>
+</body>
+</html>
